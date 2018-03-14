@@ -38,7 +38,7 @@ namespace WebMvc.Controllers
         public IActionResult Create([Bind("Nome")]Pessoa newPessoa)
         {
             if (!ModelState.IsValid)
-            return View(newPessoa);
+                return View(newPessoa);
 
             newPessoa.Id = pessoaList.Max(p => p.Id) + 1;
             pessoaList.Add(newPessoa);
